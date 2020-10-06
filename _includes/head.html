@@ -5,7 +5,21 @@
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <!-- 数学公式 -->
   <!--script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script -->
-  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        skipTags: ["script","noscript","style","textarea","pre","code"],
+        ignoreClass: "tex2jax_ignore"
+      },
+      "HTML-CSS": { fonts: ["TeX"] }
+    });
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </script>
 </script>
   {%- feed_meta -%}
